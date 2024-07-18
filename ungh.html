@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calc</title>
+    <style>
+        body{
+            background-color: lightcyan;
+        }
+        form{
+            margin: 150px auto;
+            background-color: lightblue;
+            margin-left: 590px;
+            margin-right: 602px;
+        }
+        table{
+            border: 5px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <form name="f">
+        <table>
+            <tr>
+                <td>Enter a 1<sup>st</sup> number :- </td>
+                <td><input type="text" name="abc"></td>
+            </tr>
+            <tr>
+                <td>Enter a 2<sup>nd</sup> number :- </td>
+                <td><input type="text" name="xyz"></td>
+            </tr>
+            <tr>
+                <td>Do you want to :- </td>
+                <td>
+                    <input type="radio" name="help" value="Add"> Sumation<br>
+                    <input type="radio" name="help" value="Sub"> Subtraction<br>
+                    <input type="radio" name="help" value="Multy"> Multiplication<br>
+                    <input type="radio" name="help" value="Div"> Division
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;"><input type="button" value="Submit" onclick="Calc()"></td>
+            </tr>
+            <tr>
+                <td id="ans" colspan="2"></td>
+            </tr>
+        </table>
+    </form><br><br>
+    <script>
+        function Calc(){
+            let abc = parseInt(document.f.abc.value)
+            let xyz = parseInt(document.f.xyz.value)
+
+            let cal = document.f.help.value
+            if(cal == "Add"){
+                let sum = abc + xyz
+                document.getElementById('ans').innerHTML = "<font size='5' color='red'>Sum is " + sum + "</font>"
+            }
+            else if(cal == "Sub"){
+                let sub = abc - xyz
+                document.getElementById('ans').innerHTML = "<font size='5' color='red'>Sub is " + sub + "</font>"
+            }
+            else if(cal == "Multy"){
+                let multy = abc + xyz
+                document.getElementById('ans').innerHTML = "<font size='5' color='red'>Multy is " + multy + "</font>"
+            }
+            else if(cal == "Div"){
+                let div = abc + xyz
+                document.getElementById('ans').innerHTML = "<font size='5' color='red'>Div is " + div + "</font>"
+            }
+        }
+    </script>
+</body>
+</html>

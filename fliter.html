@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <style>
+            body{
+                background-color: #383838;
+            }
+            h1{
+                text-align: center;
+                color: white;
+            }
+            div{
+                width: 100%;
+            }
+            button{
+                flex-direction: row;
+                padding: 25px;
+                margin-left: 120px;
+                color: black;
+                border-radius: 10px;
+                background-color: white;
+            }
+            img{
+                margin: 0px 500px 0px 500px;
+                border-radius: 25px;
+            }
+        </style>
+</head>
+<body>
+    <h1>Image Editor - Javascript</h1>
+    <hr color="white" size="2">
+    <div>
+        <button onclick="bl()">Blur</button>
+        <button onclick="gray()">Gray scale</button>
+        <button onclick="bright()">Bright Image</button>
+        <button onclick="contrast()">Contrast</button>
+        <button onclick="HSI()">HSI image</button>
+        <button onclick="invert()">Invert Image</button>
+    </div>
+    <br>
+    <img id="bid" src="bird_ani.gif" alt="" height="500px" width="500px">
+    <script>
+    function bl(){
+        document.getElementById('bid').style.filter = "blur(3px)"
+    }
+    function gray(){
+        document.getElementById('bid').style.filter = "grayscale(100%)"
+    }
+    function bright(){
+        document.getElementById('bid').style.filter = "brightness(200%)"
+    }
+    function contrast(){
+        document.getElementById('bid').style.filter = "contrast(200%)"
+    }
+    function HSI(){
+        document.getElementById('bid').style.filter = "hue-rotate(200deg)"
+    }
+    function invert(){
+        document.getElementById('bid').style.filter = "invert(100%)"
+    }
+    </script>
+</body>
+</html>

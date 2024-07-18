@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <style>
+    </style> -->
+</head>
+<style>
+    button{
+        display: block;
+    }
+</style>
+<body>
+    <img src="Happy.png" alt="" id="image" height="500px" width="500px">
+    <button id="prev" onclick="previmg()">Previous</button>
+    <button id="next" onclick="nextimg()">next</button>
+
+</body>
+
+<script>
+    function nextimg(){
+        let i = 0;
+        if(i<7){
+            i++
+        }
+        if(i = 7){
+            i = 0
+        }
+    }
+    function previmg(){
+        
+    }
+    value = ["Happy.png", "hotair1.png", "hotair2.png", "image1.jpg", "image2.jpg",  "image3.jpg", "birdsky.gif", "bird_ani.gif"]
+    let i = 0;
+    document.getElementById('image').src = value[i]
+</script>
+
+</html>

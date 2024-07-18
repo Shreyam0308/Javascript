@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="timepass" >
+        Enter Value of a : <input type="text" name="num1"><br><br>
+        Entrt Value of b : <input type="text" name="num2"><br><br>
+        <input type="button" onclick="add()" value="Addition">
+    </form>
+    <script>
+        function add(){
+           let a = parseInt(document.timepass.num1.value)
+           let b = parseInt(document.timepass.num2.value)
+           console.log("value of a : "+a)
+           console.log("value of b : "+b)
+
+           let c = a + b
+
+           document.write("<font size='6' color='rainbow'>Addition : "+c+"</font>")
+
+            
+        }
+    </script>
+</body>
+</html>

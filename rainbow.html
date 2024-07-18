@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On Load Rainbow</title>
+</head>
+<body onload="red()">
+    <script>
+        function red(){
+            document.body.style.backgroundColor = 'red'
+            setTimeout(orange,1500)
+        }
+        function orange(){
+            document.body.style.backgroundColor = 'orange'
+            setTimeout(yellow,1500)
+        }
+        function yellow(){
+            document.body.style.backgroundColor = 'yellow'
+            setTimeout(green,1500)
+        }
+        function green(){
+            document.body.style.backgroundColor = 'green'
+            setTimeout(skyblue,1500)
+        }
+        function skyblue(){
+            document.body.style.backgroundColor = 'skyblue'
+            setTimeout(indigo,1500)
+        }
+        function indigo(){
+            document.body.style.backgroundColor = 'indigo'
+            setTimeout(violet,1500)
+        }
+        function violet(){
+            document.body.style.backgroundColor = 'violet'
+            setTimeout(red,1500)
+        }
+    </script>
+</body>
+</html>

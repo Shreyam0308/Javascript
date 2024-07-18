@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Drop Down</title>
+    </head>
+    <style>
+    body{
+        background-color: lightblue;
+    }
+    table{
+        border: 5px solid red;
+        background-color: cyan;
+        margin: 250px auto;
+        text-align: center;
+        padding: 20px 20px 20px 20px;
+    }
+    .left{
+        text-align: left;
+    }
+    .right{
+        text-align: center;
+    }
+    p{
+        color: blue;
+        font-size: 30px;
+    }
+</style>
+<body>
+    <table>
+        <form name="f">
+            <tr>
+                <td class="left">First_Name :- </td>
+                <td class="right"><input type="text" name="fn"></td>
+            </tr>
+            <tr>
+                <td class="left">Last_Name :- </td>
+                <td class="right"><input type="text" name="ln"></td>
+            </tr>
+            <tr>
+                <td class="left">Gender :- </td>
+                <td class="right">
+                    <input type="radio" name="gen" value="Male">Male
+                    <input type="radio" name="gen" value="Female">Female
+                    <input type="radio" name="gen" value="Other">Others
+                </td>
+            </tr>
+            <tr>
+                <td class="left">Contact_NO. :- </td>
+                <td class="right"><input type="tel" name="contact"></td>
+            </tr>
+            <tr>
+                <td class="left">E-mail :- </td>
+                <td class="right"><input type="email" name="mail"></td>
+            </tr>
+            <tr>
+                <td class="left">Password :- </td>
+                <td class="right"><input type="password" name="pass"></td>
+            </tr>
+            <tr>
+                <td class="left">Hobbies :- </td>
+                <td class="right">
+                    <input type="checkbox" name="hobby" value="Travelling">Travelling
+                    <input type="checkbox" name="hobby" value="Playing">Playing
+                    <input type="checkbox" name="hobby" value="Dancing">Dancing
+                    <input type="checkbox" name="hobby" value="Singin">Singin
+                </td>
+            </tr>
+            <tr>
+                <td class="left">Address :- </td>
+                <td class="right"><textarea name="address"cols="25" rows="5"></textarea></td>
+            </tr>
+            <tr>
+                <td class="left">Nationality</td>
+                <td class="right">
+                    <select name="na" id>
+                        <option value="0">---- Select ----</option>
+                        <option value="India">India</option>
+                        <option value="Thailand">Thailand</option>
+                        <option value="Bangkok">Bangkok</option>
+                        <option value="Russia">Russia</option>
+                        <option value="USA">USA</option>
+                        <option value="UK">UK</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="left">Nationality</td>
+                <td class="right">
+                    <select name="na" id>
+                        <option value="0">---- Select ----</option>
+                        <option value="India">India</option>
+                        <option value="Thailand">Thailand</option>
+                        <option value="Bangkok">Bangkok</option>
+                        <option value="Russia">Russia</option>
+                        <option value="USA">USA</option>
+                        <option value="UK">UK</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" value="select"
+                            onclick="nation()"></td>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><p id="write"></p></td>
+            </tr>
+        </form>
+    </table>
+    <script>
+        function nation(){
+            
+            let na = document.f.na.value
+
+            if(na == '0'){
+                alert("Enter valid contry")
+            }
+            if(na == 'India'){
+                document.getElementById('write').innerHTML = "You love " + na
+            }
+            if(na == 'Thailand'){
+                document.getElementById('write').innerHTML = "You love " + na
+            }
+            if(na == 'Bangkok'){
+                document.getElementById('write').innerHTML = "You love " + na
+            }
+            if(na == 'Russia'){
+                document.getElementById('write').innerHTML = "You love " + na
+            }
+            if(na == 'USA'){
+                document.getElementById('write').innerHTML = "You love " + na
+            }
+            if(na == 'UK'){
+                document.getElementById('write').innerHTML = "You love " + na
+            }
+        }
+    </script>
+</body>
+</html>

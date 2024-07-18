@@ -1,0 +1,173 @@
+<html>
+<head>
+    <title>Form</title>
+    <style>
+    span{
+        color: red;
+    }
+</style>
+</head>
+<body>
+    <br>
+    <br><br><br><br>
+    <form name="f">
+        <table align="center">
+            <tr>
+                <td><label for="fname"> First Name</label></td>
+                <td><input type="text" name="fname" id="fname">
+                    <!-- <p>First Name is Required</p> -->
+                    <!-- <div>First Name is Required</div> -->
+                    <span id="errfn"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Last Name</label></td>
+                <td><input type="text" name="lname">
+                    <span id="errln"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <input type="radio" name="q2" value="m"> Male
+                    <input type="radio" name="q2" value="f">Female
+                </td>
+            </tr>
+            <tr>
+                <td>Contact No</td>
+                <td>
+                    <input type="tel" name="contactNo">
+                    <span id="errphon"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Hobies</td>
+                <td><input type="checkbox" name="sports" value="sports">sports
+                    <input type="checkbox" name="music" value="music">music
+                    <input type="checkbox" name="drawing" value="drawing">Drawing
+                    <span id="errgender"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Email id</td>
+                <td>
+                    <input type="email" name="mail">
+                    <span id="errmail"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>
+                    <input type="password" name="password">
+                    <span id="errpass"></span>
+                </td>
+                </tr>
+                <tr>
+                    <td>Country</td>
+                    <td>
+                        <select>
+                                <option value="0">---Select---</option>
+                                <option value="1">India</option>
+                                <option value="2">Nepal</option>
+                                <option value="3">Bhutan</option>
+                                <option value="4">Pakistan</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Enter wesite</td>
+                    <td>
+                        <input type="url" name="url">
+                        <span id="errurl"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>
+                        <textarea name="address" id="#" cols="25" rows="3"></textarea>
+                        <span id="erradress"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center"> 
+                        <input type="button" value="Submit" onclick="valdate()">&nbsp;&nbsp;&nbsp;<input type="reset">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <br>
+        <br><br><br><br>
+        <script>
+        function valdate(){
+            let fname = document.f.fname.value
+            let lname = document.f.lname.value
+            let contact = document.f.contactNo.value
+            let email = document.f.mail.value
+            let password = document.f.password.value
+            let address = document.f.address.value
+            console.log("-->",fname)
+            let isErr =  false
+            let msg = " "
+
+            if(fname == "" || fname.trim().length==0){
+                // alert("First Name is Required")
+                // isErr = true
+                // msg += "\n First Name is Required."
+                document.getElementById('errfn').innerHTML = "<font color='red'>* First Name is Required</font>"
+            }
+
+            if(lname == "" || lname.trim().length == 0){
+                // alert("Last Name is Required")
+                // isErr = true
+                // msg += "\nLast name is Required"
+                document.getElementById('errln').innerHTML = "* Last Name is Required"
+            }
+
+            if(contact == "" || contact.trim().length==0){
+                // alert("First Name is Required")
+                // isErr = true
+                // msg += "\n First Name is Required."
+                document.getElementById('errphone').innerHTML = "<font color='red'>* Contact number is Required</font>"
+            }
+
+            if(email == "" || email.trim().length==0){
+                // alert("First Name is Required")
+                // isErr = true
+                // msg += "\n First Name is Required."
+                document.getElementById('errmail').innerHTML = "<font color='red'>* Email is Required</font>"
+            }
+
+            if(password == "" || password.trim().length==0){
+                // alert("First Name is Required")
+                // isErr = true
+                // msg += "\n First Name is Required."
+                document.getElementById('errpass').innerHTML = "<font color='red'>* Password is Required</font>"
+            }
+
+            if(address == "" || address.trim().length==0){
+                // alert("First Name is Required")
+                // isErr = true
+                // msg += "\n First Name is Required."
+                document.getElementById('erradress').innerHTML = "<font color='red'>* Address is Required</font>"
+            }
+
+            let count = 0
+
+            for(let i = 0; i < document.f.g.length; i++){
+                if(document.f.g[i].checked){
+                    count++
+                    break
+                }
+            }
+
+            if(count > 0){
+                document.getElementById('errgender').innerHTML = "<font color='red'>* Gender is Required</font>"
+            }
+
+            // if(isErr){
+            //     alert(msg)
+            // }
+        }
+        </script>
+</body>
+</html>

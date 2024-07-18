@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>third program</title>
+</head>
+<body>
+    <script>
+        a = parseInt(prompt("enter a value : "))
+        b = parseInt(prompt("enter a value : "))
+        c = prompt("enter a 'add' for sum,\n enter a 'sub' for subtraction,\n enter a 'multy' for multiplication,\n enter a 'div' for division\nEnter a value : ")
+        switch(c){
+            case 'add':
+            z = a+b
+            alert("Sum = "+z)
+            break;
+            case 'sub':
+            z = a-b
+            alert("Sub = "+z)
+            break;
+            case 'multy':
+            z = a*b
+            alert("Multy = "+z)
+            break;
+            case 'div':
+            z = a/b
+            alert("Div = "+z)
+            break;
+            default:
+            alert("Enter valid input");
+            break;
+        }
+    </script>
+</body>
+</html>

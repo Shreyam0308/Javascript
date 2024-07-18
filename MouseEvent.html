@@ -1,0 +1,47 @@
+
+<!-- 
+mouse : onclick 
+        dbl click
+         over 
+         out 
+         Enter
+         leave
+         scroll
+         mousedown
+         mouseup
+
+key : keypress
+     keydown 
+     keyup 
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouse evnts</title>
+ </head>
+ <body>
+    <button onmouseover="document.body.bgColor = 'gold'">on Mouse Over</button>
+    <button onmouseenter="alert('it is mouse enter')">on Mouse Enter</button>
+    <button onmousedown="mouseDown()">Mouse Down</button>
+    <button onmouseup="mouseUp()">Mouse Up</button>
+    <script>
+        function mouseDown(){
+            document.body.style.backgroundColor = 'teal'
+        }
+        function mouseUp(){
+            document.body.style.backgroundColor = 'white'
+        }
+    </script>
+ </body>
+ </html>
+
+ <!-- 
+    mouse out
+    mouse leave
+    mouse move
+    mouse double click
+  -->
+

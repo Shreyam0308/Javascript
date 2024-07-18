@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let firstname = prompt("Enter your first name :- ")
+    let lastname = prompt("Enter your last name :- ")
+    let num1 = parseInt(prompt("Enter first number :- "))
+    let num2 = parseInt(prompt("Enter second number :- "))
+    let add=(num1,num2)=>{
+        return num1 + num2
+    }
+    let fullname=(firstname,lastname)=>{
+        fname = firstname + " " + lastname
+        return fname.toUpperCase()
+    }
+    let name = fullname(firstname,lastname)
+    let sum = add(num1,num2)
+    document.write("Full name :- "+name+"<br>Sum :- "+sum)
+</script>
+</html>

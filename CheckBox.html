@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="f">
+        <table>
+            <tr>
+                <td>Fav Colr</td>
+                <td><input type="checkbox" name="c" value="bl"> Black
+                    <input type="checkbox" name="c" value="wh">white
+                    <input type="checkbox" name="c" value="pu"> Purple
+                    <input type="checkbox" name="c" value="ye"> Yellow
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="button" value="Fav Clr" onclick="favClr()"></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        function favClr(){
+                console.log("Function call")
+                let x = document.f
+                let val = ""
+                console.log(x.c.length)
+                let msg = "Your Fav colors : "
+                
+                for(let i=0;i<x.c.length;i++){
+                    if(x.c[i].checked){
+                        console.log(x.c[i].value)
+                        val =x.c[i].value
+
+                        if(val == 'bl'){
+                            // document.write("Your fav colr  is Blue")
+                            msg =  msg + " Blue"
+
+                        }
+                        if(val == 'wh'){
+                            // document.write("Your fav colr  is White")
+                            msg = msg + " White"
+                        }
+                    }
+                }
+                document.write(msg)
+        }
+    </script>
+</body>
+</html>

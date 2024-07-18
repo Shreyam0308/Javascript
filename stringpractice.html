@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bus aaj baki hatu</title>
+    </head>
+    <body>
+        <form name="f">
+            <table>
+                <tr>
+                    <td>Enter a string :- </td>
+                    <td><input type="text" name="str"></td>
+                </tr>
+                <tr>
+                    <td>Enter a start index :- </td>
+                    <td><input type="number" name="start"></td>
+                </tr>
+                <tr>
+                    <td>Enter a end index :- </td>
+                    <td><input type="number" name="end"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <input type="button" onclick="slce()" value="Submitt Kr">
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        <h3 id="print"></h3>
+        <script>
+        function slce(){
+        let str = document.f.str.value
+        let start = document.f.start.value
+        let end = document.f.end.value
+        let message = str.slice(start,end)
+        document.getElementById('print').innerHTML = "<br> Print" + message
+        }
+    </script>
+    </body>
+</html>

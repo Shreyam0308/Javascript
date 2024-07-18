@@ -1,0 +1,121 @@
+
+<!-- 
+mouse : onclick 
+        dbl click
+         over 
+         out 
+         Enter
+         leave
+         scroll
+         mousedown
+         mouseup
+
+key : keypress
+     keydown 
+     keyup 
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouse evnts</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            border: 5px solid rebeccapurple;
+            padding: 20px;
+            text-align: justify;
+        }
+        #box1{
+            width: 200px;
+            height: 200px;
+            border: 5px solid rgb(219, 213, 44);
+            padding: 20px;
+            text-align: justify;
+        }
+        #main{
+            transition: 3s;
+            transform-origin: bottom;
+            width: 200px;
+            height: 250px;
+            border: 5px solid black;
+            padding: 20px;
+            text-align: justify;
+        }
+    </style>
+ </head>
+ <body>
+    <button onmouseover="document.body.bgColor = 'gold'">on Mouse Over</button>
+    <button onmouseenter="alert('it is mouse enter')">on Mouse Enter</button>
+    <button onmousedown="mouseDown()">Mouse Down</button>
+    <button onmouseup="mouseUp()">Mouse Up</button>
+    <script>
+        function mouseDown(){
+            document.body.style.backgroundColor = 'teal'
+        }
+        function mouseUp(){
+            document.body.style.backgroundColor = 'white'
+        }
+    </script>
+    <button onkeypress="keyPress()">Key Press</button>
+    <script>
+        function keyPress(){
+            document.body.style.backgroundColor= 'aqua'
+        }
+    </script>
+    <div id="box" onmouseover="mouseOver()" on onmouseout="mouseOut()"> 
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, aliquam. Numquam, dolore eos voluptas amet tempora perferendis nisi quaerat corrupti debitis quis magnam minima nobis laboriosam eligendi necessitatibus optio facilis.
+    </div>
+    <div id="box1"></div>
+    <script>
+        function mouseOver(){
+            document.getElementById('box').style.backgroundColor='indianred'
+            document.getElementById('box').style.color = 'wheat'
+            document.getElementById('box1').style.backgroundColor="teal"
+        }
+    
+        function mouseOut(){
+            document.getElementById('box').style.backgroundColor='white'
+            document.getElementById('box').style.color = 'black'
+        }
+    </script>
+    <br>
+    <div id="main">
+        <div id="up">press button 1 times for change this box.</div><br>
+        <div id="bottom">press button 2 times for change this box.</div>
+        <button onclick="single()" ondblclick="double()" onmouseout="out()">Press</button>
+    </div>
+    <script>
+        function double(){
+            document.getElementById('bottom').style.backgroundColor = 'red'
+            document.getElementById('bottom').style.Color = 'white'
+        }
+        function out(){
+            document.getElementById('bottom').style.backgroundColor = 'white'
+            document.getElementById('bottom').style.Color = 'black'
+            document.getElementById('up').style.backgroundColor = 'white'
+            document.getElementById('up').style.Color = 'black'
+        }
+        function single(){
+            document.getElementById('up').style.backgroundColor = 'red'
+            document.getElementById('up').style.Color = 'white'
+        }
+    </script>
+    <!-- 
+        key : keypress
+         keydown 
+         keyup 
+     -->
+ </body>
+ </html>
+
+ <!-- 
+    mouse out
+    mouse leave
+    mouse move
+    mouse double click
+  -->
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            border: 5px solid rebeccapurple;
+            padding: 20px;
+            text-align: justify;
+
+        }
+        #box1{
+            width: 200px;
+            height: 200px;
+            border: 5px solid rgb(219, 213, 44);
+            padding: 20px;
+            text-align: justify;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="box" onmouseover="mouseOver()" on onmouseout="mouseOut()"> 
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, aliquam. Numquam, dolore eos voluptas amet tempora perferendis nisi quaerat corrupti debitis quis magnam minima nobis laboriosam eligendi necessitatibus optio facilis.
+    </div>
+    <div id="box1"></div>
+    <script>
+        function mouseOver(){
+            document.getElementById('box').style.backgroundColor='indianred'
+            document.getElementById('box').style.color = 'wheat'
+            document.getElementById('box1').style.backgroundColor="teal"
+        }
+
+        function mouseOut(){
+            document.getElementById('box').style.backgroundColor='white'
+            document.getElementById('box').style.color = 'black'
+        }
+    </script>
+</body>
+</html>

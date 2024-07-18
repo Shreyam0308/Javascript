@@ -1,0 +1,285 @@
+<html>
+
+<head>
+    <title>Registration Form</title>
+    <style>
+        span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body vlink="wheat" link="wheat">
+
+    <!-- <table width="100%" bgcolor="teal" height="10%">
+        <tr align="center">
+            <td><a href="D:\KRISHNA\HTML\Home.html">Home</a></td>
+            <td><a href="D:\KRISHNA\HTML\HTML\Mihir\Form2.html">Registration</a></td>
+            <td><a href="gallary.html">Gallary</a></td>
+            <td><a href="aboutUs.html">About us</a></td>
+            <td><a href="Form.html">Login</a></td>
+        </tr>
+    </table> -->
+    <br><br><br><br>
+    <form name="f">
+        <table align="center">
+            <tr>
+                <th colspan="2">Registration Form</th>
+            </tr>
+            <tr>
+                <td>First Name</td>
+                <td><input type="text" name="fname" onkeypress="validateFn()">
+                    <span id="fnErr"></span>
+                    <!-- <p>Required</p> -->
+                    <!-- <div>Required</div> -->
+                    <!-- <span>Required</span> -->
+                </td>
+            </tr>
+            <tr>
+                <td>Last name</td>
+                <td><input type="text" name="lname" onfocus="validateLn()">
+                    <span id="lnErr"> </span>
+                </td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td><input type="radio" name="g" value="m"> Male
+                    <input type="radio" name="g" value="f"> Female
+                    <span id="genErr"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Email Id</td>
+                <td><input type="email" name="email">
+                    <span id="errEm"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" name="pwd"></td>
+            </tr>
+
+            <tr>
+                <td>Hobbies</td>
+                <td><input type="checkbox" name="h" value="sp"> Sports
+                    <input type="checkbox" name="h" value="dr"> Drawing <br>
+                    <input type="checkbox" name="h" value="mu"> Music
+                    <input type="checkbox" name="h" value="re"> Reading
+                    <span id="errHby"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Nationality</td>
+                <td><select name="na">
+                        <option value="0">---Select---</option>
+                        <option value="1">India</option>
+                        <option value="2">Nepal</option>
+                        <option value="3">China</option>
+                        <option value="4">Pakistan</option>
+                    </select>
+                    <span id="errNa"> </span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Contact No</td>
+                <td><input type="text" name="cn" onblur="validateCn()">
+                    <span id="errCn"> </span>
+                </td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><textarea <textarea rows="4" cols="15"></textarea></textarea></td>
+            </tr>
+
+
+            <tr>
+                <td colspan="2" align="center"><input type="button" value="Submit" onclick="validation()">
+                    <input type="reset">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        function validation() {
+
+            // trim : extra spaces remove
+            // startTrim : begining space remove
+            // end Trim
+            let fn = document.f.fname.value
+            let ln = document.f.lname.value
+
+            isErr = false
+            let msg = ""
+
+            // console.log("fn : "+fn)
+
+            let textOnly = /^[a-zA-Z]+$/
+            let digitsOnly = /^[0-9]+$/
+            let emailOnly = /^[a-z0-9]@[a-z]\.[a-z]$/
+
+            // abc@amil.com
+            // [a-z0-9._]@[a-z-]\.[]
+
+            if (fn == "" || fn.trim().length == 0) {
+                // alert("First name is Required")
+                // msg = msg +  "First name is Required"
+                // isErr = true
+
+                document.getElementById('fnErr').innerHTML = "<font color='red'>* First Name is Required</font>"
+            }
+            else if (textOnly.test(fn) == false) {
+                document.getElementById('fnErr').innerHTML = "<font color='red'>* Text Only</font>"
+            }
+            else {
+                document.getElementById('fnErr').innerHTML = " "
+            }
+
+
+            //last name
+            if (ln == "" || ln.trim().length == 0) {
+                // alert("Last name is Required")
+                // isErr = true
+                // msg += "\nLast name is Required"
+                document.getElementById("lnErr").innerHTML = "* Last Name is Required"
+            }
+            // console.log(fn)
+            // console.log(
+            // "len : "+fn.length)
+            // console.log("trim : "+fn.trim().length) 
+
+            // if(isErr){
+            //     alert(msg)
+            // }
+
+
+            // radio button
+            let cnt = 0
+            for (let i = 0; i < document.f.g.length; i++) {
+                if (document.f.g[i].checked == true) {
+                    console.log(true)
+                    cnt++
+                }
+            }
+            if (cnt == 0) {
+                document.getElementById('genErr').innerHTML = "* Gender is Required"
+            }
+
+            // check box validation
+
+            let cntr = 0
+            for (let i = 0; i < document.f.h.length; i++) {
+                if (document.f.h[i].checked) {
+                    cntr++
+                }
+            }
+
+            if (cntr == 0) {
+                document.getElementById('errHby').innerHTML = " * Hobby is Required"
+            }
+
+            // drop down
+
+            let na = document.f.na.value
+            console.log("na : " + na)
+
+            if (na == '0') {
+                document.getElementById('errNa').innerHTML = "* Nationality is Required"
+            }
+
+            let cn = document.f.cn.value
+            if (cn == "" || cn.trim().length == 0) {
+                document.getElementById('errCn').innerHTML = " * Contact no is Required"
+            }
+            else if (digitsOnly.test(cn) == false) {
+                document.getElementById('errCn').innerHTML = " * Digits only"
+            }
+
+            // email
+            let em = document.f.email.value
+            if (em == "" || em.trim().length == 0) {
+                document.getElementById('errEm').innerHTML = " * email is Required"
+            }
+            else if (emailOnly.test(em) == false) {
+                document.getElementById('errEm').innerHTML = " * Invalid Email"
+            }
+
+        }
+
+        function validateFn() {
+            // first name
+            let textOnly = /^[a-zA-Z]+$/
+            let fn = document.f.fname.value
+
+            if (fn == "" || fn.trim().length == 0) {
+                // alert("First name is Required")
+                // msg = msg +  "First name is Required"
+                // isErr = true
+
+                document.getElementById('fnErr').innerHTML = "<font color='red'>* First Name is Required</font>"
+            }
+            else if (textOnly.test(fn) == false) {
+                document.getElementById('fnErr').innerHTML = "<font color='red'>* Text Only</font>"
+            }
+            else {
+                document.getElementById('fnErr').innerHTML = " "
+            }
+
+        }
+
+        function validateLn() {
+            let ln = document.f.lname.value
+            let textOnly = /^[a-zA-Z]+$/
+            if (ln == "" || ln.trim().length == 0) {
+                // alert("Last name is Required")
+                // isErr = true
+                // msg += "\nLast name is Required"
+                document.getElementById("lnErr").innerHTML = "* Last Name is Required"
+            }
+            else if (textOnly.test(ln) == false) {
+                document.getElementById('lnErr').innerHTML = "<font color='red'>* Text Only</font>"
+            }
+            else {
+                document.getElementById('lnErr').innerHTML = " "
+            }
+
+
+        }
+
+        function validateCn() {
+            let cn = document.f.cn.value
+            let digitsOnly = /^[0-9]+$/ 
+
+            
+            if (cn == "" || cn.trim().length == 0) {
+                document.getElementById('errCn').innerHTML = " * Contact no is Required"
+            }
+            else if (digitsOnly.test(cn) == false) {
+                document.getElementById('errCn').innerHTML = " * Digits only"
+            }
+        }
+    </script>
+</body>
+
+</html>
+<!-- 
+    validation :
+        empty
+        length
+        camprision
+        112
+        aaa
+
+
+        -->
+
+<!-- 
+            press
+            up
+            down
+
+            onfocus
+            onblur
+            onchange
+
+        -->

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query selector</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 100px;
+            background-color: aqua;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="d1">Box 1</div>
+    <div class="box" name="box">Box 2</div>
+    <div class="box" name="box">Box 3</div>
+    <script>
+        // let x = document.querySelector('div')
+        // x.innerHTML = "Royal"
+
+        let z = document.querySelectorAll('.box')
+        // z[1].style.backgroundColor = 'gold'
+        // z[0].style.textAlign = 'center'
+
+        for(let i=0;i<3;i++){
+            z[i].style.backgroundColor= 'teal'
+        }
+
+    </script>
+</body>
+</html>

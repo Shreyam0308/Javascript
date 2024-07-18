@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<style>
+    table{
+        border: 1px solid gray;
+        background-color: lightgray;
+        text-align: center;
+        margin: 200px auto;
+        height: 200px;
+        width: 500px;
+    }
+    label{
+        color: blue;
+    }
+</style>
+<script>
+    function from(){
+        let fn = document.regform.fn.value
+        let ln = document.regform.ln.value
+        let conact = document.regform.contact.value
+        let mail = document.regform.mail.value
+        document.write("<table><tr><td>First Name :- </td><td>" +fn+ "</td></tr><tr><td>Last Name :- </td><td>" +ln+ "</td></tr><tr><td>Contact No. :- </td><td>" +conact+ "</td></tr><tr><td>Email :- </td><td>" +mail+ "</td></tr></table>")
+    }
+</script>
+<body>
+    <form name="regform">
+        <table>
+            <tr>
+                <td><label for="fn">First Name :- </label></td>
+                <td><input type="text" id="fn" name="fn"></td>
+            </tr>
+            <tr>
+                <td><label for="ln">Last Name :- </label></td>
+                <td><input type="text" id="ln" name="ln"></td>
+            </tr>
+            <tr>
+                <td><label for="contact">Contact No. :- </label></td>
+                <td><input type="tel" id="contact" name="contact"></td>
+            </tr>
+            <tr>
+                <td><label for="mail">Email :- </label></td>
+                <td><input type="email" id="mail" name="mail"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" value="Submit Karo" onclick="from()"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onload</title>
+</head>
+<body onload="bgClr()">
+    <script>
+        function bgClr(){
+            // document.body.bgColor = 'gold'
+            document.body.style.backgroundColor = 'gold'
+            console.log("gold")
+            setTimeout(teal,2000)
+            // 2000 millisceonds : 2 sec
+            // teal()
+        }
+        function teal(){
+            document.body.style.backgroundColor = 'teal'
+            console.log("teal")
+            setTimeout(aqua,2000)
+        }
+        function aqua(){
+            document.body.style.backgroundColor = 'aqua'
+            console.log("aqua")
+            setTimeout(bgClr,2000)
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamro Fav Color</title>
+    <style>
+        table{
+            border: 3px solid gray;
+            background-color: lightcyan;
+            height: 200px;
+            width: 370px;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin: 250px auto;
+        }
+        body{
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <form action="" name="f">
+        <table>
+            <tr>
+                <td>Fav Color :- </td>
+                <td>
+                    <input type="checkbox" name="color" value="bl">Blue
+                    <input type="checkbox" name="color" value="wh">White
+                    <input type="checkbox" name="color" value="pu">Purple
+                    <input type="checkbox" name="color" value="re">Red
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;"><input type="button" onclick="Fav_Col()" value="Submitt Kr"></td>
+            </tr>
+            <tr>
+                <td id="ans" colspan="2"></td>
+            </tr>
+        </table>
+    </form><br><br>
+    
+    <script>
+        function Fav_Col(){
+            let x = document.f
+            let jakas = ""
+            
+            let message = "Your Fav colors : "
+
+            for(let i = 0; i < x.color.length; i++){
+                if(x.color[i].checked){
+                    jakas = x.color[i].value
+
+                    if(jakas == 'bl'){
+                        message =  message + " Blue"
+                    }
+
+                    if(jakas == 'wh'){
+                        message = message + " White"
+                    }
+
+                    if(jakas == 'pu'){
+                        message = message + " Purple"
+                    }
+
+                    if(jakas == 're'){
+                        message = message + " Red"
+                    }
+                }
+            }
+            document.getElementById('ans').innerHTML = "<font size='5' color='red'>" + message + "</font>"
+        }
+    </script>
+</body>
+</html>
